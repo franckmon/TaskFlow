@@ -1,0 +1,73 @@
+# Environment
+.env
+.env.*
+!.env.example
+!**/.env.example
+!.env.test
+!**/.env.test
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# Alembic
+alembic/__pycache__/
+alembic/versions/__pycache__/
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Type checkers
+.mypy_cache/
+.pyright/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Test cache / coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache
+.cache/
+.coverage
+htmlcov/
+frontend/coverage/
+tests/.test.db
+e2e.db
+
+# Playwright
+frontend/playwright-report/
+frontend/test-results/
+frontend/blob-report/
+
+# Node / frontend cache
+frontend/.vite/
+frontend/.cache/

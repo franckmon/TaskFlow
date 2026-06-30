@@ -1,0 +1,98 @@
+[project]
+name = "task-flow"
+version = "1.0.0"
+description = "Task management API with FastAPI and React"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    "sqlalchemy==2.0.23",
+    "pydantic==2.5.0",
+    "pydantic-settings==2.1.0",
+    "python-dotenv==1.0.0",
+    "python-jose[cryptography]==3.3.0",
+    "passlib[bcrypt]==1.7.4",
+    "bcrypt>=4.0.1,<4.1.0",
+    "python-multipart==0.0.6",
+    "slowapi==0.1.9",
+]
+
+[dependency-groups]
+dev = [
+    "alembic==1.13.0",
+    "httpx==0.27.2",
+    "mypy==1.14.1",
+    "pytest==8.3.4",
+    "pytest-cov==7.1.0",
+    "ruff==0.9.10",
+    "types-passlib==1.7.7.20240819",
+    "types-python-jose==3.3.4.20240106",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+# Pyflakes + pycodestyle errors (ruff default set).
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/conftest.py" = ["E402"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["pydantic.mypy", "sqlalchemy.ext.mypy.plugin"]
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = ["app.api.auth_router", "app.api.task_router"]
+disable_error_code = ["arg-type"]
+
+[[tool.mypy.overrides]]
+module = "app.core.config"
+disable_error_code = ["call-arg"]
+
+[[tool.mypy.overrides]]
+module = "app.core.exception_handlers"
+disable_error_code = ["arg-type"]
+
+[[tool.mypy.overrides]]
+module = "app.schemas.task"
+disable_error_code = ["list-item", "return-value"]
+
+[[tool.mypy.overrides]]
+module = "app.services.task_service"
+disable_error_code = ["arg-type"]
+
+[[tool.mypy.overrides]]
+module = "app.core.dependencies"
+disable_error_code = ["assignment"]
+
+[[tool.mypy.overrides]]
+module = "app.persistence.mappers"
+disable_error_code = ["arg-type"]
+
+[[tool.mypy.overrides]]
+module = "app.repositories.task_repository"
+disable_error_code = ["var-annotated", "arg-type"]
+
+[[tool.mypy.overrides]]
+module = "app.core.bootstrap"
+disable_error_code = ["call-arg"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true

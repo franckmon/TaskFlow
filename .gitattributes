@@ -1,0 +1,15 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
