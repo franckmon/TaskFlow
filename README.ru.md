@@ -123,8 +123,8 @@ uv run uvicorn app.main:app --reload
 ## Локальный запуск
 
 ```bash
-git clone https://github.com/franckmon/task-flow.git
-cd task-flow
+git clone https://github.com/franckmon/TaskFlow.git
+cd TaskFlow
 
 # Backend
 cp .env.example .env && set -a && source .env && set +a
@@ -177,7 +177,7 @@ cd frontend && npm run test:smoke      # e2e smoke
 ## Структура проекта
 
 ```text
-task-flow/
+TaskFlow/
 ├── app/                  # FastAPI-приложение
 ├── frontend/             # React-клиент
 ├── tests/                # Backend-тесты
