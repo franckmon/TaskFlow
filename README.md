@@ -123,7 +123,7 @@ uv run uvicorn app.main:app --reload
 ## Run locally
 
 ```bash
-git clone https://github.com/franckmon/task-flow.git
+git clone https://github.com/franckmon/TaskFlow.git
 cd task-flow
 
 # Backend
