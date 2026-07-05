@@ -124,7 +124,7 @@ uv run uvicorn app.main:app --reload
 
 ```bash
 git clone https://github.com/franckmon/TaskFlow.git
-cd task-flow
+cd TaskFlow
 
 # Backend
 cp .env.example .env && set -a && source .env && set +a
@@ -177,7 +177,7 @@ Documentation: `http://localhost:8000/docs`.
 ## Project layout
 
 ```text
-task-flow/
+TaskFlow/
 ├── app/                  # FastAPI application
 ├── frontend/             # React client
 ├── tests/                # Backend test suite
